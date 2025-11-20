@@ -2,25 +2,39 @@
 
 按指定页数拆分PDF文件的命令行工具
 
-## 安装
+## 开发
 
-### 方法1：使用pip安装（开发模式）
+#### 使用 kimicc 开发
+claude 输出的代码作为随机种子 输出到Claude.md， 
+然后使用kimicc 修复直到项目可以运行。
 
-```bash
-cd pdf-splitter
-pip install -e .
-```
-### 方法2：直接安装
+### 安装：使用 uv + pipx 安装
 
 ```bash
-cd pdf-splitter
-pip install .
+  uv venv
+  source .venv/bin/activate
+  uv pip install PyPDF2
+  kimicc
+  uv pip install -e .
+  pwd
+  which pdf-split
+  echo $PATH
+  echo $VIRTUAL_ENV
+  uv pip install pipx
+  pipx ensurepath
+  deactivate # 如果您在虚拟环境中
+  z yyscode
+  z pdf-splitter
+  ll
+  pipx install ./pdf-splitter
+  pdf-split -h
+  git init
+  git add .
+  git commit -m "fst pr"
+  git remote add origin git@github.com:xxx/pdf-splitter.git
+  git push -u origin master
 ```
-### 方法3：从GitHub安装（如果发布到GitHub）
 
-```bash
-pip install git+https://github.com/aresbit/pdf-splitter.git
-```
 ## 使用
 
 ### 命令行使用
@@ -42,9 +56,4 @@ from pdf_splitter import split_pdf
 
 # 拆分PDF
 split_pdf('input.pdf', 10, 'output_folder/')
-```
-## 卸载
-
-```bash
-pip uninstall pdf-splitter
 ```
