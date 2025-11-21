@@ -35,6 +35,10 @@ claude 输出的代码作为随机种子 输出到Claude.md，
   git push -u origin master
 ```
 
+在 Windows 上，用 PowerShell 或 CMD 代替 Git Bash：
+cd pdf-splitter
+pipx install .
+
 ## 使用
 
 ### 命令行使用
